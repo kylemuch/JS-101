@@ -1,7 +1,8 @@
 const readLine = require('readline-sync');
-const messageObj = require('./calculator_messages.json');
+const MESSAGEOBJ = require('./calculator_messages.json');
 
-console.log(messageObj);
+
+console.log();
 
 let runCalculator = () => {
 
@@ -11,33 +12,33 @@ let runCalculator = () => {
 
     let invalidNumber = num => num.trimStart() === "" || Number.isNaN(Number(num));
 
-    prompt('Welcome to Calculator!');
+  prompt(MESSAGEOBJ.welcome);
 
 
-    prompt('What\'s the first number?');
+    prompt(MESSAGEOBJ.getFirst);
 
     let number1 = readLine.question();
 
     while (invalidNumber(number1)) {
-      prompt('Hmmm... that\'s not a valid number.');
+      prompt(MESSAGEOBJ.getFirst);
       number1 = readLine.question();
     }
-    prompt('What\'s the second number?');
+    prompt(MESSAGEOBJ.getSecond);
     let number2 = readLine.question();
 
     while (invalidNumber(number2)) {
-      prompt('Hmmm... that\'s not a valid number.');
+      prompt(MESSAGEOBJ.invalidNum);
       number2 = readLine.question();
     }
 
-    prompt('Which operator which you like to use?');
+    prompt(MESSAGEOBJ.getOperator);
     prompt('1) Add 2) Subtract 3) Multiply 4) Divide');
 
     let operator = readLine.question();
 
     while (!['1','2','3','4'].includes(operator)) {
       console.log(operator);
-      prompt('Must enter either 1,2,3,4.');
+      prompt(MESSAGEOBJ.operators);
       operator = readLine.question();
     }
 
@@ -63,22 +64,22 @@ let runCalculator = () => {
         break;
     }
 
-    prompt(`The answer is: ${output}`);
+    prompt(`The result is: ${output}`);
 
-    prompt('Would you like to perform another calculation? Please enter yes or no.');
+    prompt(MESSAGEOBJ.anotherCalc);
 
     let anotherCalculation = readLine.question();
 
     while (!['yes', 'no'].includes(anotherCalculation)) {
-      prompt('You must enter either yes or no.');
+      prompt(MESSAGEOBJ.invalidEntry);
       anotherCalculation = readLine.question();
     }
 
     if (anotherCalculation === 'yes') {
-      prompt('Great! Let\'s perform another calculation!');
+      prompt(MESSAGEOBJ.great);
       runCalculator();
     } else {
-      prompt('Thanks for using calcuator! Goodbye.');
+      prompt(MESSAGEOBJ.thanks);
     }
 }
 

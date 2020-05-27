@@ -1,3 +1,12 @@
 {
-  "0": "I'm a message"
+  "welcome"     : "Welcome to Calculator!",
+  "getFirst"    : "What's the first number?",
+  "getSecond"   : "What's the second number?",
+  "invalidNum"  : "Hmmm... that's not a valid number.",
+  "getOperator" : "Which operator would you like to use?",
+  "operators"   : "Must enter either 1,2,3,4.",
+  "anotherCalc" : "Would you like to perform another calculation? Please enter yes or no.",
+  "invalidEntry": "You must enter either yes or no.",
+  "great"       : "Great! Let's perform another calculation!",
+  "thanks"      : "Thanks for using calcuator! Goodbye."
 }
